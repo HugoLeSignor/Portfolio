@@ -6,7 +6,7 @@
     transition: all 0.5s ease;
     padding: 0.3rem;
     border-radius: 0.2rem;
-
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
     &:hover {
         background: $dark-hover;
         color: $accent;
@@ -23,7 +23,7 @@
     letter-spacing: 0.5rem;
     transition: all 0.5s ease;
     cursor: pointer;
-    
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
     &:hover {
         transform: translateY(-3px);
         background: $dark-hover;

@@ -11,7 +11,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Carousel with JS
 const skillsTrack = document.querySelector('.skills-track');
 
 if (skillsTrack) {

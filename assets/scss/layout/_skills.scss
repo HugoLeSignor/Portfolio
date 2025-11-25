@@ -6,7 +6,7 @@
 
         h2 {
             text-align: center;
-            color: $text-dark;
+            color: $bg;
             font-size: 3rem;
             margin-bottom: 3rem;
         }
@@ -53,11 +53,11 @@
             svg {
                 width: 64px;
                 height: 64px;
-                fill: $text-dark;
+                fill: $bg;
             }
 
             span {
-                color: $text-dark;
+                color: $bg;
                 font-size: 0.9rem;
                 white-space: nowrap;
             }

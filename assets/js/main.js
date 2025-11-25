@@ -1,16 +1,3 @@
-const header = document.querySelector('.header');
-const hero = document.querySelector('.hero');
-
-window.addEventListener('scroll', () => {
-    const heroBottom = hero.offsetTop + hero.offsetHeight;
-    
-    if (window.scrollY > heroBottom) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
-
 const skillsTrack = document.querySelector('.skills-track');
 
 if (skillsTrack) {

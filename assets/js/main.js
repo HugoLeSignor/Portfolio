@@ -4,15 +4,20 @@ document.querySelectorAll('a[href^="#"]').forEach(ancre => {
     e.preventDefault()
     const cible = document.querySelector(this.getAttribute('href'))
     if (cible) {
-      // Centrer la section compétences, aligner les autres en haut
-      const estCompetences = this.getAttribute('href') === '#competences'
+      // Centrer les sections compétences et portfolio, aligner les autres en haut
+      const href = this.getAttribute('href')
+      const estCompetences = href === '#competences'
+      const estPortfolio = href === '#portfolio'
 
-      if (estCompetences) {
+      if (estCompetences || estPortfolio) {
         // Calculer la position pour centrer la section
+        const enTete = document.querySelector('.en-tete')
+        const hauteurEnTete = enTete ? enTete.offsetHeight : 0
         const positionHautElement = cible.offsetTop
         const hauteurElement = cible.offsetHeight
         const hauteurFenetre = window.innerHeight
-        const positionDefilement = positionHautElement - hauteurFenetre / 2 + hauteurElement / 2
+        const positionDefilement =
+          positionHautElement - hauteurFenetre / 2 + hauteurElement / 2 - hauteurEnTete
 
         window.scrollTo({
           top: positionDefilement,

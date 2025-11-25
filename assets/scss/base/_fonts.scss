@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('../../fonts/Inconsolata-VariableFont_wdth\,wght.ttf');
+}
+
+@font-face {
+  font-family: 'Spectral';
+  src: url('../../fonts/Spectral-Regular.ttf');
+}
+
+body {
+    font-family: 'Spectral', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.logo,
+.nav a,
+button,
+.btn {
+    font-family: 'Inconsolata', sans-serif;
+    font-weight: 700;
+}

@@ -1,0 +1,68 @@
+.skills {
+    .skills-card {
+        background: $accent;
+        border-radius: 1rem;
+        padding: 3rem 2rem;
+
+        h2 {
+            text-align: center;
+            color: $text-dark;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .skills-carousel {
+            overflow: hidden;
+            position: relative;
+            padding: 2rem 0;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100px;
+                height: 100%;
+                z-index: 2;
+            }
+
+            &::before {
+                left: 0;
+                background: linear-gradient(to right, $accent, transparent);
+            }
+
+            &::after {
+                right: 0;
+                background: linear-gradient(to left, $accent, transparent);
+            }
+        }
+
+        .skills-track {
+            display: flex;
+            gap: 4rem;
+            width: fit-content;
+            will-change: transform;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            min-width: 120px;
+
+            svg {
+                width: 64px;
+                height: 64px;
+                fill: $text-dark;
+            }
+
+            span {
+                color: $text-dark;
+                font-size: 0.9rem;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+

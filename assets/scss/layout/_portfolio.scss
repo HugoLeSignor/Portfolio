@@ -1,0 +1,131 @@
+.portfolio {
+  @include section-padding;
+
+  h2 {
+    @include section-title;
+  }
+
+  &__grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+
+    @include respond-to(tablet) {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    @include respond-to(mobile) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  &__element {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    @include transition(transform 0.3s ease);
+    border: 2px solid transparent;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+
+    @include respond-to(mobile) {
+      padding: 1.25rem;
+    }
+
+    @include respond-to(small-mobile) {
+      padding: 1rem;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $accent;
+
+      @include respond-to(mobile) {
+        transform: translateY(-2px);
+      }
+
+      .portfolio__image {
+        border-color: $accent;
+
+        img {
+          transform: scale(1.02);
+          filter: brightness(1.1) contrast(1.15);
+        }
+      }
+    }
+
+    h3 {
+      color: $accent;
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+
+      @include respond-to(mobile) {
+        font-size: 1.3rem;
+      }
+
+      @include respond-to(small-mobile) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__description {
+    color: $text;
+    font-size: 1rem;
+    line-height: 1.6;
+
+    @include respond-to(mobile) {
+      font-size: 0.95rem;
+    }
+  }
+
+  &__image {
+    background: rgba(255, 189, 89, 0.1);
+    border-radius: 0.5rem;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(255, 189, 89, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include transition(border-color 0.3s ease);
+
+    @include respond-to(tablet) {
+      height: 250px;
+    }
+
+    @include respond-to(mobile) {
+      height: 220px;
+    }
+
+    @include respond-to(small-mobile) {
+      height: 200px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      display: block;
+      filter: brightness(1.05) contrast(1.1);
+      @include transition(transform 0.3s ease, filter 0.3s ease);
+    }
+  }
+
+  &__texte-fallback {
+    position: absolute;
+    color: $accent;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    font-weight: 600;
+    display: none;
+    z-index: 1;
+  }
+}

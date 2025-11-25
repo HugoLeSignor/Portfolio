@@ -1,13 +1,22 @@
+// Abstracts
 @import 'abstracts/variables';
+@import 'abstracts/mixins';
 @import 'abstracts/animations';
 
+// Base
 @import 'base/reset';
 @import 'base/fonts';
 @import 'base/base';
 
-@import 'components/buttons';
+// Components
 @import 'components/container';
+@import 'components/logo';
+@import 'components/navigation';
+@import 'components/buttons';
 
+// Layout
 @import 'layout/header';
 @import 'layout/hero';
 @import 'layout/skills';
+@import 'layout/portfolio';
+@import 'layout/contact';

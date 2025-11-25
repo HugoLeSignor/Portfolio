@@ -1,10 +1,52 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-    padding: 2rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+.en-tete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: transparent;
+  backdrop-filter: none;
+  @include transition(background 0.3s ease, backdrop-filter 0.3s ease);
+
+  &--defile {
+    background: rgba(47, 61, 75, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  &__bouton-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 101;
+
+    span {
+      width: 25px;
+      height: 3px;
+      background: $accent;
+      @include transition(all 0.3s ease);
+      border-radius: 2px;
+    }
+
+    @include respond-to(mobile) {
+      display: flex;
+    }
+
+    &--actif {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+    }
+  }
 }

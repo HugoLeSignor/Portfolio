@@ -1,31 +1,76 @@
 .hero {
-    height: 85vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    h1 {
-        text-align: center;
-        color: $accent;
-        font-size: 5rem;
-        text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  @include section-padding;
+
+  h1 {
+    text-align: center;
+    color: $accent;
+    font-size: 5rem;
+
+    @include respond-to(tablet) {
+      font-size: 4rem;
     }
 
-    p {
-        text-align: center;
-        font-size: 2rem;
-        color: $text;
-        text-decoration: underline;
-        text-decoration-color: $accent;
-        text-decoration-thickness: 3px;
-        text-underline-offset: 0.3rem;
-        display: inline-block;
-        overflow: hidden;
-        white-space: nowrap;
-        border-right: 3px solid $accent;
-        animation: typing 2s steps(15, end) forwards, blink-caret 0.75s step-end infinite;
+    @include respond-to(mobile) {
+      font-size: 3rem;
     }
+
+    @include respond-to(small-mobile) {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    text-align: center;
+    font-size: 2rem;
+    color: $text;
+    text-decoration: underline;
+    text-decoration-color: $accent;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.3rem;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid $accent;
+    animation: typing 2s steps(15, end) forwards, blink-caret 0.75s step-end infinite;
+
+    @include respond-to(tablet) {
+      font-size: 1.75rem;
+    }
+
+    @include respond-to(mobile) {
+      font-size: 1.5rem;
+      text-decoration-thickness: 2px;
+      border-right-width: 2px;
+    }
+
+    @include respond-to(small-mobile) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__bouton-cta {
+    @include button-base;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+
+    @include respond-to(mobile) {
+      padding: 0.875rem 2rem;
+      font-size: 1.1rem;
+    }
+
+    @include respond-to(small-mobile) {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
 }
 
 

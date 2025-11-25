@@ -1,4 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    background: $bg;
-    height: 100vh;
+  background: $bg;
+  min-height: 100vh;
+  color: $text;
+  font-family: 'Spectral', serif;
+}
+
+.section {
+  padding: 3rem 1rem;
 }

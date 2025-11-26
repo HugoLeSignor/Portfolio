@@ -9,8 +9,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       const isSkills = href === '#competences'
       const isPortfolio = href === '#portfolio'
       const isPropos = href === '#a-propos'
+      const isAccueil = href === '#accueil'
 
-      if (isSkills || isPortfolio ||isPropos) {
+      if (isSkills || isPortfolio || isPropos || isAccueil) {
         // Calculate position to center the section
         const header = document.querySelector('.en-tete')
         const headerHeight = header ? header.offsetHeight : 0

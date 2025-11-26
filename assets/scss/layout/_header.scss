@@ -10,6 +10,10 @@
   backdrop-filter: none;
   @include transition(background 0.3s ease, backdrop-filter 0.3s ease);
 
+  a {
+    text-decoration: none;
+  }
+
   &--defile {
     background: rgba(47, 61, 75, 0.95);
     backdrop-filter: blur(10px);

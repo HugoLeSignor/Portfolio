@@ -1,6 +1,6 @@
 .competences {
   @include section-padding;
-
+  margin-bottom: 40rem;
   &__carte {
     background: $accent;
     border-radius: 1rem;

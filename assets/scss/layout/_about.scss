@@ -1,0 +1,27 @@
+.a-propos {
+
+  &__contenu {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__texte {
+    p {
+      
+      line-height: 1.8;
+      font-size: 1.125rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  h2 {
+    text-align: center;
+    color: $accent;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    
+  }
+}

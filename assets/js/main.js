@@ -4,12 +4,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     e.preventDefault()
     const target = document.querySelector(this.getAttribute('href'))
     if (target) {
-      // Center skills and portfolio sections, align others to top
+      // Center sections, align others to top
       const href = this.getAttribute('href')
       const isSkills = href === '#competences'
       const isPortfolio = href === '#portfolio'
+      const isPropos = href === '#a-propos'
 
-      if (isSkills || isPortfolio) {
+      if (isSkills || isPortfolio ||isPropos) {
         // Calculate position to center the section
         const header = document.querySelector('.en-tete')
         const headerHeight = header ? header.offsetHeight : 0
@@ -79,3 +80,5 @@ if (skillsTrack) {
 
   animateCarousel()
 }
+
+

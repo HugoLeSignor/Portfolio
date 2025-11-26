@@ -18,11 +18,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const elementTopPosition = target.offsetTop
         const elementHeight = target.offsetHeight
         const windowHeight = window.innerHeight
-        const scrollPosition =
-          elementTopPosition - windowHeight / 2 + elementHeight / 2 - headerHeight
+        
+        // Adjust for sticky header: center in visible viewport (minus header)
+        const viewportHeight = windowHeight - headerHeight
+        const scrollPosition = elementTopPosition - headerHeight - (viewportHeight / 2) + (elementHeight / 2)
 
         window.scrollTo({
-          top: scrollPosition,
+          top: Math.max(0, scrollPosition),
           behavior: 'smooth',
         })
       } else {

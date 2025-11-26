@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as *;
+
 .a-propos {
   margin-bottom: 30rem;
   &__contenu {

@@ -1,9 +1,15 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .portfolio {
   margin-bottom: 40rem;
-  @include section-padding;
+  padding: 3rem 1rem;
 
   h2 {
-    @include section-title;
+    text-align: center;
+    color: $accent;
+    font-size: 3rem;
+    margin-bottom: 2rem;
   }
 
   &__grille {
@@ -11,16 +17,6 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 1rem;
-
-    @include respond-to(tablet) {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    @include respond-to(mobile) {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
   }
 
   &__element {
@@ -33,21 +29,9 @@
     display: block;
     cursor: pointer;
 
-    @include respond-to(mobile) {
-      padding: 1.25rem;
-    }
-
-    @include respond-to(small-mobile) {
-      padding: 1rem;
-    }
-
     &:hover {
       transform: translateY(-5px);
       border-color: $accent;
-
-      @include respond-to(mobile) {
-        transform: translateY(-2px);
-      }
 
       .portfolio__image {
         border-color: $accent;
@@ -64,14 +48,6 @@
       font-size: 1.5rem;
       margin-top: 1rem;
       margin-bottom: 0.5rem;
-
-      @include respond-to(mobile) {
-        font-size: 1.3rem;
-      }
-
-      @include respond-to(small-mobile) {
-        font-size: 1.2rem;
-      }
     }
   }
 
@@ -79,10 +55,6 @@
     color: $text;
     font-size: 1rem;
     line-height: 1.6;
-
-    @include respond-to(mobile) {
-      font-size: 0.95rem;
-    }
   }
 
   &__image {
@@ -96,18 +68,6 @@
     align-items: center;
     justify-content: center;
     @include transition(border-color 0.3s ease);
-
-    @include respond-to(tablet) {
-      height: 250px;
-    }
-
-    @include respond-to(mobile) {
-      height: 220px;
-    }
-
-    @include respond-to(small-mobile) {
-      height: 200px;
-    }
 
     img {
       width: 100%;
@@ -143,11 +103,6 @@
       fill: $text;
       opacity: 0.7;
       @include transition(all 0.3s ease);
-
-      @include respond-to(mobile) {
-        width: 24px;
-        height: 24px;
-      }
 
       &:hover {
         opacity: 1;

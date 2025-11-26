@@ -1,24 +1,19 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .competences {
-  @include section-padding;
+  padding: 3rem 1rem;
   margin-bottom: 40rem;
   &__carte {
     background: $accent;
     border-radius: 1rem;
     padding: 3rem 2rem;
 
-    @include respond-to(mobile) {
-      padding: 2rem 1rem;
-    }
-
     h2 {
       text-align: center;
       color: $bg;
       font-size: 3rem;
       margin-bottom: 2rem;
-
-      @include respond-to(mobile) {
-        font-size: 2rem;
-      }
     }
   }
 
@@ -27,10 +22,6 @@
     position: relative;
     padding: 2rem 0;
 
-    @include respond-to(mobile) {
-      padding: 1.5rem 0;
-    }
-
     &::before,
     &::after {
       content: '';
@@ -38,14 +29,6 @@
       width: 100px;
       height: 100%;
       z-index: 2;
-
-      @include respond-to(mobile) {
-        width: 50px;
-      }
-
-      @include respond-to(small-mobile) {
-        width: 30px;
-      }
     }
 
     &::before {
@@ -64,18 +47,6 @@
     gap: 4rem;
     width: fit-content;
     will-change: transform;
-
-    @include respond-to(tablet) {
-      gap: 3rem;
-    }
-
-    @include respond-to(mobile) {
-      gap: 2.5rem;
-    }
-
-    @include respond-to(small-mobile) {
-      gap: 2rem;
-    }
   }
 
   &__element {
@@ -85,44 +56,16 @@
     gap: 1rem;
     min-width: 120px;
 
-    @include respond-to(mobile) {
-      min-width: 100px;
-      gap: 0.75rem;
-    }
-
-    @include respond-to(small-mobile) {
-      min-width: 80px;
-      gap: 0.5rem;
-    }
-
     svg {
       width: 64px;
       height: 64px;
       fill: $bg;
-
-      @include respond-to(mobile) {
-        width: 56px;
-        height: 56px;
-      }
-
-      @include respond-to(small-mobile) {
-        width: 48px;
-        height: 48px;
-      }
     }
 
     span {
       color: $bg;
       font-size: 1rem;
       white-space: nowrap;
-
-      @include respond-to(mobile) {
-        font-size: 0.9rem;
-      }
-
-      @include respond-to(small-mobile) {
-        font-size: 0.8rem;
-      }
     }
   }
 }

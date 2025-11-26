@@ -1,25 +1,26 @@
 // Abstracts
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
-@import 'abstracts/animations';
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+@use 'abstracts/animations' as *;
+@use 'abstracts/responsive' as *;
 
 // Base
-@import 'base/reset';
-@import 'base/fonts';
-@import 'base/base';
-@import 'base/background-animation';
+@use 'base/reset';
+@use 'base/fonts';
+@use 'base/base';
+@use 'base/background-animation';
 
 // Components
-@import 'components/container';
-@import 'components/logo';
-@import 'components/navigation';
-@import 'components/buttons';
+@use 'components/container';
+@use 'components/logo';
+@use 'components/navigation';
+@use 'components/buttons';
 
 // Layout
-@import 'layout/header';
-@import 'layout/hero';
-@import 'layout/about';
-@import 'layout/skills';
-@import 'layout/portfolio';
-@import 'layout/contact';
-@import 'layout/footer';
+@use 'layout/header';
+@use 'layout/hero';
+@use 'layout/about';
+@use 'layout/skills';
+@use 'layout/portfolio';
+@use 'layout/contact';
+@use 'layout/footer';

@@ -1,0 +1,309 @@
+// Responsive styles - Toutes les règles responsive regroupées par breakpoint
+// Breakpoints:
+// - tablet: max-width 1024px
+// - mobile: max-width 768px  
+// - small-mobile: max-width 480px
+
+// ============================================
+// TABLET (max-width: 1024px)
+// ============================================
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 4rem;
+  }
+
+  .hero p {
+    font-size: 1.75rem;
+  }
+
+  .en-tete__navigation {
+    gap: 0.5rem;
+
+    a {
+      padding: 0.25rem;
+      font-size: 0.95rem;
+    }
+  }
+
+  .portfolio h2 {
+    font-size: 2.5rem;
+  }
+
+  .portfolio__grille {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .portfolio__image {
+    height: 250px;
+  }
+
+  .competences__piste {
+    gap: 3rem;
+  }
+
+  .contact h2 {
+    font-size: 2.5rem;
+  }
+}
+
+// ============================================
+// MOBILE (max-width: 768px)
+// ============================================
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+    text-decoration-thickness: 2px;
+    border-right-width: 2px;
+  }
+
+  .hero__bouton-cta {
+    padding: 0.875rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .en-tete__logo {
+    font-size: 1.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    letter-spacing: 0.3rem;
+  }
+
+  .en-tete__bouton-menu {
+    display: flex;
+  }
+
+  .en-tete__navigation {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 280px;
+    background: rgba(47, 61, 75, 0.95);
+    backdrop-filter: blur(1px);
+    flex-direction: column;
+    padding: 5rem 2rem 2rem;
+    transition: right 0.3s ease;
+    z-index: 100;
+    gap: 0.5rem;
+
+    &--ouvert {
+      right: 0;
+    }
+
+    a {
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+      margin-left: 0;
+      font-size: 1.1rem;
+    }
+  }
+
+  .a-propos,
+  .competences,
+  .portfolio,
+  .contact {
+    padding: 2rem 1rem;
+  }
+
+  .competences__carte {
+    padding: 2rem 1rem;
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  .competences__carrousel {
+    padding: 1.5rem 0;
+
+    &::before,
+    &::after {
+      width: 50px;
+    }
+  }
+
+  .competences__piste {
+    gap: 2.5rem;
+  }
+
+  .competences__element {
+    min-width: 100px;
+    gap: 0.75rem;
+
+    svg {
+      width: 56px;
+      height: 56px;
+    }
+
+    span {
+      font-size: 0.9rem;
+    }
+  }
+
+  .portfolio h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .portfolio__grille {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .portfolio__element {
+    padding: 1.25rem;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
+
+  .portfolio__description {
+    font-size: 0.95rem;
+  }
+
+  .portfolio__image {
+    height: 220px;
+  }
+
+  .portfolio__technologies svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact__info > p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact__liens {
+    gap: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact__lien {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+
+  footer {
+    padding: 1.5rem 1rem;
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// ============================================
+// SMALL MOBILE (max-width: 480px)
+// ============================================
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .hero__bouton-cta {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .en-tete__logo {
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .competences__carrousel {
+    &::before,
+    &::after {
+      width: 30px;
+    }
+  }
+
+  .competences__piste {
+    gap: 2rem;
+  }
+
+  .competences__element {
+    min-width: 80px;
+    gap: 0.5rem;
+
+    svg {
+      width: 48px;
+      height: 48px;
+    }
+
+    span {
+      font-size: 0.8rem;
+    }
+  }
+
+  .portfolio h2 {
+    font-size: 1.75rem;
+  }
+
+  .portfolio__element {
+    padding: 1rem;
+
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
+
+  .portfolio__image {
+    height: 200px;
+  }
+
+  .contact h2 {
+    font-size: 1.75rem;
+  }
+
+  .contact__info > p {
+    font-size: 1rem;
+  }
+
+  .contact__liens {
+    gap: 1rem;
+  }
+
+  .contact__lien {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  footer p {
+    font-size: 0.85rem;
+  }
+}
+

@@ -1,26 +1,14 @@
-@import '../abstracts/variables';
-@import '../abstracts/mixins';
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 footer {
   text-align: center;
   padding: 2rem 1rem;
   color: $accent;
 
-  @include respond-to(mobile) {
-    padding: 1.5rem 1rem;
-  }
-
   p {
     margin: 0;
     font-size: 1rem;
-
-    @include respond-to(mobile) {
-      font-size: 0.9rem;
-    }
-
-    @include respond-to(small-mobile) {
-      font-size: 0.85rem;
-    }
   }
 }
 

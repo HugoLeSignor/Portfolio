@@ -1,10 +1,13 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .en-tete__logo {
   background: $accent;
   color: $text-dark;
   padding: 0.6rem 0.6rem 0.6rem calc(0.3rem + 1rem);
   font-weight: 300;
   border-radius: 0.2rem;
-  font-size: 2rem;
+  font-size: 3rem;
   letter-spacing: 0.5rem;
   @include transition(all 0.5s ease);
   cursor: pointer;
@@ -13,17 +16,6 @@
     transform: translateY(-3px);
     background: $dark-hover;
     color: $accent;
-  }
-
-  @include respond-to(mobile) {
-    font-size: 1.5rem;
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
-    letter-spacing: 0.3rem;
-  }
-
-  @include respond-to(small-mobile) {
-    font-size: 1.2rem;
-    letter-spacing: 0.2rem;
   }
 }
 

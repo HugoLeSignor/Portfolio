@@ -1,36 +1,36 @@
-// Défilement fluide
-document.querySelectorAll('a[href^="#"]').forEach(ancre => {
-  ancre.addEventListener('click', function (e) {
+// Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
     e.preventDefault()
-    const cible = document.querySelector(this.getAttribute('href'))
-    if (cible) {
-      // Centrer les sections compétences et portfolio, aligner les autres en haut
+    const target = document.querySelector(this.getAttribute('href'))
+    if (target) {
+      // Center skills and portfolio sections, align others to top
       const href = this.getAttribute('href')
-      const estCompetences = href === '#competences'
-      const estPortfolio = href === '#portfolio'
+      const isSkills = href === '#competences'
+      const isPortfolio = href === '#portfolio'
 
-      if (estCompetences || estPortfolio) {
-        // Calculer la position pour centrer la section
-        const enTete = document.querySelector('.en-tete')
-        const hauteurEnTete = enTete ? enTete.offsetHeight : 0
-        const positionHautElement = cible.offsetTop
-        const hauteurElement = cible.offsetHeight
-        const hauteurFenetre = window.innerHeight
-        const positionDefilement =
-          positionHautElement - hauteurFenetre / 2 + hauteurElement / 2 - hauteurEnTete
+      if (isSkills || isPortfolio) {
+        // Calculate position to center the section
+        const header = document.querySelector('.en-tete')
+        const headerHeight = header ? header.offsetHeight : 0
+        const elementTopPosition = target.offsetTop
+        const elementHeight = target.offsetHeight
+        const windowHeight = window.innerHeight
+        const scrollPosition =
+          elementTopPosition - windowHeight / 2 + elementHeight / 2 - headerHeight
 
         window.scrollTo({
-          top: positionDefilement,
+          top: scrollPosition,
           behavior: 'smooth',
         })
       } else {
-        cible.scrollIntoView({
+        target.scrollIntoView({
           behavior: 'smooth',
           block: 'start',
         })
       }
 
-      // Fermer le menu mobile si ouvert
+      // Close mobile menu if open
       const navigation = document.getElementById('navigation-principale')
       if (navigation && navigation.classList.contains('en-tete__navigation--ouvert')) {
         navigation.classList.remove('en-tete__navigation--ouvert')
@@ -39,62 +39,43 @@ document.querySelectorAll('a[href^="#"]').forEach(ancre => {
   })
 })
 
-// Menu mobile
-const boutonMenu = document.querySelector('.en-tete__bouton-menu')
+// Mobile menu
+const menuButton = document.querySelector('.en-tete__bouton-menu')
 const navigation = document.getElementById('navigation-principale')
 
-if (boutonMenu && navigation) {
-  boutonMenu.addEventListener('click', () => {
-    const estOuvert = navigation.classList.toggle('en-tete__navigation--ouvert')
-    boutonMenu.classList.toggle('en-tete__bouton-menu--actif', estOuvert)
+if (menuButton && navigation) {
+  menuButton.addEventListener('click', () => {
+    const isOpen = navigation.classList.toggle('en-tete__navigation--ouvert')
+    menuButton.classList.toggle('en-tete__bouton-menu--actif', isOpen)
   })
 
-  // Fermer le menu en cliquant à l'extérieur
+  // Close menu when clicking outside
   document.addEventListener('click', e => {
-    if (!navigation.contains(e.target) && !boutonMenu.contains(e.target)) {
+    if (!navigation.contains(e.target) && !menuButton.contains(e.target)) {
       navigation.classList.remove('en-tete__navigation--ouvert')
-      boutonMenu.classList.remove('en-tete__bouton-menu--actif')
+      menuButton.classList.remove('en-tete__bouton-menu--actif')
     }
   })
 }
 
-// Effet de défilement sur l'en-tête
-const enTete = document.querySelector('.en-tete')
+// Skills carousel
+const skillsTrack = document.querySelector('.competences__piste')
 
-if (enTete) {
-  function gererDefilement() {
-    if (window.scrollY > 50) {
-      enTete.classList.add('en-tete--defile')
-    } else {
-      enTete.classList.remove('en-tete--defile')
-    }
-  }
-
-  // Vérifier la position au chargement
-  gererDefilement()
-
-  // Écouter le défilement
-  window.addEventListener('scroll', gererDefilement)
-}
-
-// Carrousel des compétences
-const pisteCompetences = document.querySelector('.competences__piste')
-
-if (pisteCompetences) {
+if (skillsTrack) {
   let position = 0
-  const vitesse = 0.5
+  const speed = 0.5
 
-  function animerCarrousel() {
-    position -= vitesse
-    const largeurPiste = pisteCompetences.scrollWidth / 2
+  function animateCarousel() {
+    position -= speed
+    const trackWidth = skillsTrack.scrollWidth / 2
 
-    if (Math.abs(position) >= largeurPiste) {
+    if (Math.abs(position) >= trackWidth) {
       position = 0
     }
 
-    pisteCompetences.style.transform = `translateX(${position}px)`
-    requestAnimationFrame(animerCarrousel)
+    skillsTrack.style.transform = `translateX(${position}px)`
+    requestAnimationFrame(animateCarousel)
   }
 
-  animerCarrousel()
+  animateCarousel()
 }

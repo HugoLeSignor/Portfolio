@@ -11,11 +11,106 @@
   letter-spacing: 0.5rem;
   @include transition(all 0.5s ease);
   cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  min-height: 60px;
 
-  &:hover {
-    transform: translateY(-3px);
-    background: $dark-hover;
-    color: $accent;
+  &-text {
+    @include transition(all 0.3s ease);
+    display: block;
+  }
+
+  &-burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    width: 25px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      width: 25px;
+      height: 3px;
+      background: $text-dark;
+      @include transition(all 0.3s ease);
+      border-radius: 2px;
+      display: block;
+    }
+  }
+
+  // Animation hover sur desktop - couleurs et translation uniquement
+  @media (min-width: 769px) {
+    &:hover {
+      transform: translateY(-3px);
+      background: $dark-hover;
+      color: $accent;
+    }
+  }
+
+  // Sur mobile/tablette - le logo devient un burger
+  @media (max-width: 1024px) {
+    &-burger {
+      // Animation sur la span du milieu - translation vers la droite
+      span:nth-child(2) {
+        @include transition(all 0.3s ease);
+      }
+    }
+
+    // Hover sur mobile/tablette - animation de la span du milieu
+    &:hover:not(&--actif) {
+      .en-tete__logo-burger {
+        span:nth-child(2) {
+          transform: translateX(8px);
+        }
+      }
+    }
+  }
+
+  // Sur mobile - le logo devient un burger
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+    min-width: 50px;
+    min-height: 50px;
+    font-size: 0;
+
+    &-text {
+      display: none;
+    }
+
+    &-burger {
+      display: flex;
+
+      span {
+        background: $text-dark;
+      }
+    }
+
+    // État actif quand le menu est ouvert - croix simplifiée + style hover
+    &--actif {
+      background: $dark-hover;
+      
+      .en-tete__logo-burger {
+        span {
+          background: $accent;
+        }
+
+        span:nth-child(1) {
+          transform: rotate(45deg) translateY(8px);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+          transform: translateX(0);
+        }
+        span:nth-child(3) {
+          transform: rotate(-45deg) translateY(-8px);
+        }
+      }
+    }
   }
 }
 

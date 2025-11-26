@@ -65,19 +65,29 @@
     border-right-width: 2px;
   }
 
-  .hero__bouton-cta {
-    padding: 0.875rem 2rem;
-    font-size: 1.1rem;
+  .btn__hero {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
   }
 
-  .en-tete__logo {
-    font-size: 1.5rem;
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
-    letter-spacing: 0.3rem;
+  .hero__bouton-cta {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  .en-tete {
+    padding: 1rem;
+    gap: 1rem;
   }
 
   .en-tete__bouton-menu {
-    display: flex;
+    display: none; // Le logo fait maintenant office de menu burger
   }
 
   .en-tete__navigation {
@@ -91,7 +101,7 @@
     flex-direction: column;
     padding: 5rem 2rem 2rem;
     transition: right 0.3s ease;
-    z-index: 100;
+    z-index: 101;
     gap: 0.5rem;
 
     &--ouvert {
@@ -229,14 +239,34 @@
     font-size: 1.2rem;
   }
 
+  .btn__hero {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
   .hero__bouton-cta {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .en-tete {
+    padding: 0.75rem;
+    gap: 0.75rem;
   }
 
   .en-tete__logo {
-    font-size: 1.2rem;
-    letter-spacing: 0.2rem;
+    min-width: 45px;
+    min-height: 45px;
+    padding: 0.4rem;
+  }
+
+  .en-tete__navigation {
+    width: 100%;
+    max-width: 320px;
+    padding: 4rem 1.5rem 2rem;
   }
 
   .competences__carrousel {

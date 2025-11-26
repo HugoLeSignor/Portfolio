@@ -52,5 +52,10 @@
         transform: rotate(-45deg) translate(7px, -7px);
       }
     }
+
+    // Cacher le bouton menu sur mobile car le logo fait le travail
+    @media (max-width: 768px) {
+      display: none !important;
+    }
   }
 }

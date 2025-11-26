@@ -1,6 +1,11 @@
 // Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
+    // Sur mobile, ignorer le logo car il sert de menu burger
+    if (window.innerWidth <= 768 && this.classList.contains('en-tete__logo')) {
+      return
+    }
+    
     e.preventDefault()
     const target = document.querySelector(this.getAttribute('href'))
     if (target) {
@@ -36,8 +41,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
       // Close mobile menu if open
       const navigation = document.getElementById('navigation-principale')
+      const logoButton = document.querySelector('.en-tete__logo')
       if (navigation && navigation.classList.contains('en-tete__navigation--ouvert')) {
         navigation.classList.remove('en-tete__navigation--ouvert')
+        if (logoButton) {
+          logoButton.classList.remove('en-tete__logo--actif')
+        }
       }
     }
   })
@@ -45,19 +54,60 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Mobile menu
 const menuButton = document.querySelector('.en-tete__bouton-menu')
+const logoButton = document.querySelector('.en-tete__logo')
 const navigation = document.getElementById('navigation-principale')
 
+// Fonction pour toggle le menu
+function toggleMenu() {
+  if (navigation) {
+    const isOpen = navigation.classList.toggle('en-tete__navigation--ouvert')
+    
+    // Toggle l'état actif sur le logo
+    if (logoButton) {
+      logoButton.classList.toggle('en-tete__logo--actif', isOpen)
+    }
+    
+    // Toggle l'état actif sur le bouton menu (si présent)
+    if (menuButton) {
+      menuButton.classList.toggle('en-tete__bouton-menu--actif', isOpen)
+    }
+  }
+}
+
+// Gérer le clic sur le logo sur mobile
+if (logoButton && navigation) {
+  logoButton.addEventListener('click', (e) => {
+    // Sur mobile, le logo toggle le menu au lieu de scroller
+    if (window.innerWidth <= 768) {
+      e.preventDefault()
+      e.stopPropagation()
+      toggleMenu()
+    }
+  })
+}
+
+// Gérer le clic sur le bouton menu (pour desktop/tablette si visible)
 if (menuButton && navigation) {
   menuButton.addEventListener('click', () => {
-    const isOpen = navigation.classList.toggle('en-tete__navigation--ouvert')
-    menuButton.classList.toggle('en-tete__bouton-menu--actif', isOpen)
+    toggleMenu()
   })
+}
 
-  // Close menu when clicking outside
+// Close menu when clicking outside
+if (navigation) {
   document.addEventListener('click', e => {
-    if (!navigation.contains(e.target) && !menuButton.contains(e.target)) {
+    const isClickInsideNav = navigation.contains(e.target)
+    const isClickOnLogo = logoButton && logoButton.contains(e.target)
+    const isClickOnMenuButton = menuButton && menuButton.contains(e.target)
+    
+    if (!isClickInsideNav && !isClickOnLogo && !isClickOnMenuButton) {
       navigation.classList.remove('en-tete__navigation--ouvert')
-      menuButton.classList.remove('en-tete__bouton-menu--actif')
+      if (logoButton) {
+        logoButton.classList.remove('en-tete__logo--actif')
+      }
+      if (menuButton) {
+        menuButton.classList.remove('en-tete__bouton-menu--actif')
+      }
     }
   })
 }

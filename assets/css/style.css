@@ -467,6 +467,9 @@ body {
   position: absolute;
   width: 25px;
   height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   justify-content: center;
   align-items: center;
 }
@@ -477,6 +480,7 @@ body {
   transition: all 0.3s ease;
   border-radius: 2px;
   display: block;
+  transform-origin: center;
 }
 @media (min-width: 769px) {
   .en-tete__logo:hover {
@@ -512,18 +516,26 @@ body {
   .en-tete__logo--actif {
     background: #1F2830;
   }
+  .en-tete__logo--actif .en-tete__logo-burger {
+    transform: translate(-50%, -50%);
+    gap: 0;
+  }
   .en-tete__logo--actif .en-tete__logo-burger span {
     background: #FFBD59;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
   }
   .en-tete__logo--actif .en-tete__logo-burger span:nth-child(1) {
-    transform: rotate(45deg) translateY(8px);
+    transform: translate(-50%, -50%) rotate(45deg);
   }
   .en-tete__logo--actif .en-tete__logo-burger span:nth-child(2) {
     opacity: 0;
-    transform: translateX(0);
+    transform: translate(-50%, -50%);
   }
   .en-tete__logo--actif .en-tete__logo-burger span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-8px);
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 }
 

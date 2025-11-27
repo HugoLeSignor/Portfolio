@@ -21,10 +21,6 @@
     overflow: hidden;
     position: relative;
     padding: 2rem 0;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     z-index: 101;
 
     &::before,
@@ -52,11 +48,6 @@
     display: flex;
     gap: 4rem;
     width: fit-content;
-    will-change: transform;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     position: relative;
     z-index: 101;
   }
@@ -76,7 +67,6 @@
       justify-content: center;
       text-decoration: none;
       cursor: pointer;
-      pointer-events: auto;
       position: relative;
       z-index: 104;
     }

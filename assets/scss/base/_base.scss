@@ -13,4 +13,9 @@ body {
 
 .section {
   padding: 3rem 1rem;
+  scroll-margin-top: 120px; // Offset pour le header sticky
+}
+
+#accueil {
+  scroll-margin-top: 0; // Pas d'offset pour la section accueil
 }

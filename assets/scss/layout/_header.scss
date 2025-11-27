@@ -11,6 +11,10 @@
   z-index: 100;
   background: transparent;
   backdrop-filter: none;
+
+  @media (max-width: 1024px) {
+    z-index: 200;
+  }
   transition: background 0.3s ease, backdrop-filter 0.3s ease;
 
   a {
@@ -20,36 +24,5 @@
   &--scrolled {
     background: rgba(47, 61, 75, 0.95);
     backdrop-filter: blur(10px);
-  }
-
-  &__menu-button {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 150;
-
-    span {
-      width: 25px;
-      height: 3px;
-      background: $accent;
-      transition: all 0.3s ease;
-      border-radius: 2px;
-    }
-
-    &--active {
-      span:nth-child(1) {
-        transform: rotate(45deg) translate(8px, 8px);
-      }
-      span:nth-child(2) {
-        opacity: 0;
-      }
-      span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-      }
-    }
   }
 }

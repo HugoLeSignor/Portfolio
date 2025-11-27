@@ -6,10 +6,6 @@
   gap: 1rem;
   align-items: flex-start;
 
-  &--open {
-    right: 0;
-  }
-
   a {
     background: $accent;
     color: $text-dark;
@@ -20,6 +16,11 @@
     padding: 0.3rem;
     position: relative;
     z-index: 150;
+
+    @media (max-width: 1024px) {
+      z-index: auto;
+      position: relative;
+    }
 
     &:hover {
       background: $dark-hover;

@@ -21,7 +21,7 @@ function toggleMenu() {
   }
 }
 
-// Gérer le clic sur le logo pour toggle le menu sur tablette 
+// Gérer le clic sur le logo pour toggle le menu sur tablette
 if (logoButton && navigation) {
   logoButton.addEventListener(
     'click',
@@ -35,7 +35,7 @@ if (logoButton && navigation) {
       }
     },
     true
-  ) // Utiliser capture phase pour être prioritaire
+  )
 }
 
 // Fermer le menu quand on clique en dehors

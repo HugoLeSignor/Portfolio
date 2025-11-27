@@ -1,3 +1,6 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 // Responsive styles - Toutes les règles responsive regroupées par breakpoint
 // Breakpoints:
 // - tablet: max-width 1024px
@@ -45,6 +48,22 @@
   .contact h2 {
     font-size: 2.5rem;
   }
+
+  .en-tete__logo {
+    &-burger {
+      span:nth-child(2) {
+        @include transition(all 0.3s ease);
+      }
+    }
+
+    &:hover:not(&--actif) {
+      .en-tete__logo-burger {
+        span:nth-child(2) {
+          transform: translateX(8px);
+        }
+      }
+    }
+  }
 }
 
 // ============================================
@@ -87,7 +106,7 @@
   }
 
   .en-tete__bouton-menu {
-    display: none; // Le logo fait maintenant office de menu burger
+    display: none !important;
   }
 
   .en-tete__navigation {
@@ -225,6 +244,53 @@
       font-size: 0.9rem;
     }
   }
+
+  .en-tete__logo {
+    padding: 0.5rem;
+    min-width: 50px;
+    min-height: 50px;
+    font-size: 0;
+
+    &-text {
+      display: none;
+    }
+
+    &-burger {
+      display: flex;
+
+      span {
+        background: $text-dark;
+      }
+    }
+
+    &--actif {
+      background: $dark-hover;
+      
+      .en-tete__logo-burger {
+        transform: translate(-50%, -50%);
+        gap: 0;
+        
+        span {
+          background: $accent;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin: 0;
+        }
+
+        span:nth-child(1) {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+          transform: translate(-50%, -50%);
+        }
+        span:nth-child(3) {
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+    }
+  }
 }
 
 // ============================================
@@ -337,3 +403,15 @@
   }
 }
 
+// ============================================
+// DESKTOP (min-width: 769px)
+// ============================================
+@media (min-width: 769px) {
+  .en-tete__logo {
+    &:hover {
+      transform: translateY(-3px);
+      background: $dark-hover;
+      color: $accent;
+    }
+  }
+}

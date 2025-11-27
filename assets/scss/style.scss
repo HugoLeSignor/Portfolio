@@ -2,13 +2,13 @@
 @use 'abstracts/variables' as *;
 @use 'abstracts/mixins' as *;
 @use 'abstracts/animations' as *;
-@use 'abstracts/responsive' as *;
 
 // Base
 @use 'base/reset';
 @use 'base/fonts';
 @use 'base/base';
 @use 'base/background-animation';
+@use 'base/responsive';
 
 // Components
 @use 'components/container';

@@ -36,6 +36,150 @@
     background-position: 0% 50%;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("../fonts/Inconsolata-VariableFont_wdth,wght.ttf");
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("../fonts/Spectral-Regular.ttf");
+}
+body {
+  font-family: "Spectral", serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.en-tete__logo,
+a,
+button,
+.btn {
+  font-family: "Inconsolata", sans-serif;
+  font-weight: 800;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #2F3D4B;
+  min-height: 100vh;
+  color: #F2F2F2;
+  position: relative;
+}
+
+.section {
+  padding: 3rem 1rem;
+}
+
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+.background-animation__particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.background-animation__particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 189, 89, 0.8);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+.background-animation__particle:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+  animation-duration: 8s;
+}
+.background-animation__particle:nth-child(2) {
+  top: 20%;
+  left: 80%;
+  animation-delay: 1s;
+  animation-duration: 10s;
+}
+.background-animation__particle:nth-child(3) {
+  top: 40%;
+  left: 10%;
+  animation-delay: 2s;
+  animation-duration: 7s;
+}
+.background-animation__particle:nth-child(4) {
+  top: 60%;
+  left: 70%;
+  animation-delay: 3s;
+  animation-duration: 9s;
+}
+.background-animation__particle:nth-child(5) {
+  top: 80%;
+  left: 30%;
+  animation-delay: 1.5s;
+  animation-duration: 11s;
+}
+.background-animation__particle:nth-child(6) {
+  top: 15%;
+  left: 50%;
+  animation-delay: 4s;
+  animation-duration: 8s;
+}
+.background-animation__particle:nth-child(7) {
+  top: 70%;
+  left: 90%;
+  animation-delay: 2.5s;
+  animation-duration: 10s;
+}
+.background-animation__particle:nth-child(8) {
+  top: 30%;
+  left: 40%;
+  animation-delay: 5s;
+  animation-duration: 9s;
+}
+.background-animation__particle:nth-child(9) {
+  top: 50%;
+  left: 60%;
+  animation-delay: 3.5s;
+  animation-duration: 10s;
+}
+.background-animation__particle:nth-child(10) {
+  top: 25%;
+  left: 15%;
+  animation-delay: 4.5s;
+  animation-duration: 8.5s;
+}
+.background-animation__particle:nth-child(11) {
+  top: 75%;
+  left: 55%;
+  animation-delay: 1.8s;
+  animation-duration: 11s;
+}
+.background-animation__particle:nth-child(12) {
+  top: 45%;
+  left: 85%;
+  animation-delay: 6s;
+  animation-duration: 9.5s;
+}
+
 @media (max-width: 1024px) {
   .hero h1 {
     font-size: 4rem;
@@ -65,6 +209,12 @@
   }
   .contact h2 {
     font-size: 2.5rem;
+  }
+  .en-tete__logo-burger span:nth-child(2) {
+    transition: all 0.3s ease;
+  }
+  .en-tete__logo:hover:not(.en-tete__logo--actif) .en-tete__logo-burger span:nth-child(2) {
+    transform: translateX(8px);
   }
 }
 @media (max-width: 768px) {
@@ -98,7 +248,7 @@
     gap: 1rem;
   }
   .en-tete__bouton-menu {
-    display: none;
+    display: none !important;
   }
   .en-tete__navigation {
     position: fixed;
@@ -209,6 +359,45 @@
   footer p {
     font-size: 0.9rem;
   }
+  .en-tete__logo {
+    padding: 0.5rem;
+    min-width: 50px;
+    min-height: 50px;
+    font-size: 0;
+  }
+  .en-tete__logo-text {
+    display: none;
+  }
+  .en-tete__logo-burger {
+    display: flex;
+  }
+  .en-tete__logo-burger span {
+    background: #2C2C2C;
+  }
+  .en-tete__logo--actif {
+    background: #1F2830;
+  }
+  .en-tete__logo--actif .en-tete__logo-burger {
+    transform: translate(-50%, -50%);
+    gap: 0;
+  }
+  .en-tete__logo--actif .en-tete__logo-burger span {
+    background: #FFBD59;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+  }
+  .en-tete__logo--actif .en-tete__logo-burger span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .en-tete__logo--actif .en-tete__logo-burger span:nth-child(2) {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  .en-tete__logo--actif .en-tete__logo-burger span:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
 }
 @media (max-width: 480px) {
   .hero h1 {
@@ -292,146 +481,13 @@
     font-size: 0.85rem;
   }
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@media (min-width: 769px) {
+  .en-tete__logo:hover {
+    transform: translateY(-3px);
+    background: #1F2830;
+    color: #FFBD59;
+  }
 }
-
-@font-face {
-  font-family: "Inconsolata";
-  src: url("../fonts/Inconsolata-VariableFont_wdth,wght.ttf");
-}
-@font-face {
-  font-family: "Spectral";
-  src: url("../fonts/Spectral-Regular.ttf");
-}
-body {
-  font-family: "Spectral", sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6,
-.en-tete__logo,
-.en-tete__navigation a,
-button,
-.btn {
-  font-family: "Inconsolata", sans-serif;
-  font-weight: 800;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: #2F3D4B;
-  min-height: 100vh;
-  color: #F2F2F2;
-  font-family: "Spectral", serif;
-  position: relative;
-}
-
-.section {
-  padding: 3rem 1rem;
-}
-
-.background-animation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-.background-animation__particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.background-animation__particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(255, 189, 89, 0.8);
-  border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
-}
-.background-animation__particle:nth-child(1) {
-  top: 10%;
-  left: 20%;
-  animation-delay: 0s;
-  animation-duration: 8s;
-}
-.background-animation__particle:nth-child(2) {
-  top: 20%;
-  left: 80%;
-  animation-delay: 1s;
-  animation-duration: 10s;
-}
-.background-animation__particle:nth-child(3) {
-  top: 40%;
-  left: 10%;
-  animation-delay: 2s;
-  animation-duration: 7s;
-}
-.background-animation__particle:nth-child(4) {
-  top: 60%;
-  left: 70%;
-  animation-delay: 3s;
-  animation-duration: 9s;
-}
-.background-animation__particle:nth-child(5) {
-  top: 80%;
-  left: 30%;
-  animation-delay: 1.5s;
-  animation-duration: 11s;
-}
-.background-animation__particle:nth-child(6) {
-  top: 15%;
-  left: 50%;
-  animation-delay: 4s;
-  animation-duration: 8s;
-}
-.background-animation__particle:nth-child(7) {
-  top: 70%;
-  left: 90%;
-  animation-delay: 2.5s;
-  animation-duration: 10s;
-}
-.background-animation__particle:nth-child(8) {
-  top: 30%;
-  left: 40%;
-  animation-delay: 5s;
-  animation-duration: 9s;
-}
-.background-animation__particle:nth-child(9) {
-  top: 50%;
-  left: 60%;
-  animation-delay: 3.5s;
-  animation-duration: 10s;
-}
-.background-animation__particle:nth-child(10) {
-  top: 25%;
-  left: 15%;
-  animation-delay: 4.5s;
-  animation-duration: 8.5s;
-}
-.background-animation__particle:nth-child(11) {
-  top: 75%;
-  left: 55%;
-  animation-delay: 1.8s;
-  animation-duration: 11s;
-}
-.background-animation__particle:nth-child(12) {
-  top: 45%;
-  left: 85%;
-  animation-delay: 6s;
-  animation-duration: 9.5s;
-}
-
 .conteneur {
   width: 100%;
   max-width: 1200px;
@@ -481,62 +537,6 @@ body {
   border-radius: 2px;
   display: block;
   transform-origin: center;
-}
-@media (min-width: 769px) {
-  .en-tete__logo:hover {
-    transform: translateY(-3px);
-    background: #1F2830;
-    color: #FFBD59;
-  }
-}
-@media (max-width: 1024px) {
-  .en-tete__logo-burger span:nth-child(2) {
-    transition: all 0.3s ease;
-  }
-  .en-tete__logo:hover:not(.en-tete__logo--actif) .en-tete__logo-burger span:nth-child(2) {
-    transform: translateX(8px);
-  }
-}
-@media (max-width: 768px) {
-  .en-tete__logo {
-    padding: 0.5rem;
-    min-width: 50px;
-    min-height: 50px;
-    font-size: 0;
-  }
-  .en-tete__logo-text {
-    display: none;
-  }
-  .en-tete__logo-burger {
-    display: flex;
-  }
-  .en-tete__logo-burger span {
-    background: #2C2C2C;
-  }
-  .en-tete__logo--actif {
-    background: #1F2830;
-  }
-  .en-tete__logo--actif .en-tete__logo-burger {
-    transform: translate(-50%, -50%);
-    gap: 0;
-  }
-  .en-tete__logo--actif .en-tete__logo-burger span {
-    background: #FFBD59;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: 0;
-  }
-  .en-tete__logo--actif .en-tete__logo-burger span:nth-child(1) {
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-  .en-tete__logo--actif .en-tete__logo-burger span:nth-child(2) {
-    opacity: 0;
-    transform: translate(-50%, -50%);
-  }
-  .en-tete__logo--actif .en-tete__logo-burger span:nth-child(3) {
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
 }
 
 .en-tete__navigation {
@@ -641,11 +641,6 @@ body {
 }
 .en-tete__bouton-menu--actif span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -7px);
-}
-@media (max-width: 768px) {
-  .en-tete__bouton-menu {
-    display: none !important;
-  }
 }
 
 .hero {

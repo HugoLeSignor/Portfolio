@@ -1,21 +1,21 @@
 @use 'variables' as *;
 
 @keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 15.8ch;
-    }
+  from {
+    width: 0;
+  }
+  to {
+    width: 15.8ch;
+  }
 }
 
 @keyframes blink-caret {
-    from, to {
-        border-right-color: transparent;
-    }
-    50% {
-        border-right-color: $accent;
-    }
+  from, to {
+    border-right-color: transparent;
+  }
+  50% {
+    border-right-color: $accent;
+  }
 }
 
 @keyframes float {

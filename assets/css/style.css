@@ -145,6 +145,23 @@ body {
   .contact h2 {
     font-size: 2.5rem;
   }
+  .contact__links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .contact__link {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+  .contact__link svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 @media (max-width: 768px) {
   .hero {
@@ -190,10 +207,19 @@ body {
   .contact__links {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 1rem;
   }
   .contact__link {
     width: 100%;
-    max-width: 250px;
+    max-width: 280px;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+  .contact__link svg {
+    width: 24px;
+    height: 24px;
   }
   footer {
     padding: 1.5rem 1rem;
@@ -319,12 +345,17 @@ body {
   transition: all 0.5s ease;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
+  padding: 1.5rem 3rem;
+  font-size: 1.4rem;
   font-weight: 500;
   position: relative;
   z-index: 150;
+}
+.contact__link svg {
+  width: 28px;
+  height: 28px;
 }
 .contact__link:hover {
   background: #1F2830;
@@ -333,10 +364,6 @@ body {
 .contact__link:focus {
   outline: 2px solid #FFBD59;
   outline-offset: 2px;
-}
-.contact__link svg {
-  width: 24px;
-  height: 24px;
 }
 
 .header {
@@ -424,6 +451,8 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
+  text-align: center;
+  width: 100%;
 }
 
 .about {
@@ -637,7 +666,7 @@ body {
 }
 
 .contact {
-  margin-bottom: 20rem;
+  margin-bottom: 5rem;
   padding: 3rem 1rem;
 }
 .contact h2 {
@@ -650,6 +679,7 @@ body {
   max-width: 800px;
   margin: 0 auto;
   width: 100%;
+  text-align: center;
 }
 .contact__info {
   text-align: center;
@@ -663,8 +693,10 @@ body {
 .contact__links {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
 }
 
 footer {

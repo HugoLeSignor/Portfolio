@@ -21,12 +21,12 @@ function toggleMenu() {
   }
 }
 
-// Gérer le clic sur le logo pour toggle le menu sur tablette (prioritaire)
+// Gérer le clic sur le logo pour toggle le menu sur tablette 
 if (logoButton && navigation) {
   logoButton.addEventListener(
     'click',
     function (event) {
-      // Sur tablette/mobile (≤1024px), toggle le menu au lieu de scroller
+      // Sur tablette/mobile (1024px), toggle le menu au lieu de scroller
       if (isTabletOrMobile()) {
         event.preventDefault()
         event.stopPropagation()

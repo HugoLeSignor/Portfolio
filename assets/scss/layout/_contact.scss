@@ -1,7 +1,7 @@
 @use '../abstracts/variables' as *;
 
 .contact {
-  margin-bottom: 20rem;
+  margin-bottom: 5rem;
   padding: 3rem 1rem;
 
   h2 {
@@ -15,6 +15,7 @@
     max-width: 800px;
     margin: 0 auto;
     width: 100%;
+    text-align: center;
   }
 
   &__info {
@@ -31,7 +32,9 @@
   &__links {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
   }
 }

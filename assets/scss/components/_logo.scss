@@ -1,5 +1,4 @@
 @use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
 
 .header__logo {
   background: $accent;
@@ -9,7 +8,7 @@
   border-radius: 0.2rem;
   font-size: 3rem;
   letter-spacing: 0.5rem;
-  @include transition(all 0.5s ease);
+  transition: all 0.5s ease;
   cursor: pointer;
   position: relative;
   z-index: 150;
@@ -20,7 +19,7 @@
   min-height: 60px;
 
   &-text {
-    @include transition(all 0.3s ease);
+    transition: all 0.3s ease;
     display: block;
   }
 
@@ -41,7 +40,7 @@
       width: 25px;
       height: 3px;
       background: $text-dark;
-      @include transition(all 0.3s ease);
+      transition: all 0.3s ease;
       border-radius: 2px;
       display: block;
       transform-origin: center;

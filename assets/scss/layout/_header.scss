@@ -1,5 +1,4 @@
 @use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
 
 .header {
   display: flex;
@@ -12,7 +11,7 @@
   z-index: 100;
   background: transparent;
   backdrop-filter: none;
-  @include transition(background 0.3s ease, backdrop-filter 0.3s ease);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
 
   a {
     text-decoration: none;
@@ -37,7 +36,7 @@
       width: 25px;
       height: 3px;
       background: $accent;
-      @include transition(all 0.3s ease);
+      transition: all 0.3s ease;
       border-radius: 2px;
     }
 

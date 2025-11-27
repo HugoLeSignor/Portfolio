@@ -1,5 +1,4 @@
 @use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
 
 .portfolio {
   margin-bottom: 40rem;
@@ -23,7 +22,7 @@
     background: rgba(255, 255, 255, 0.05);
     border-radius: 1rem;
     padding: 1.5rem;
-    @include transition(transform 0.3s ease);
+    transition: transform 0.3s ease;
     border: 2px solid transparent;
     text-decoration: none;
     display: block;
@@ -34,15 +33,6 @@
     &:hover {
       transform: translateY(-5px);
       border-color: $accent;
-
-      .portfolio__image {
-        border-color: $accent;
-
-        img {
-          transform: scale(1.02);
-          filter: brightness(1.1) contrast(1.15);
-        }
-      }
     }
 
     h3 {
@@ -59,6 +49,15 @@
     line-height: 1.6;
   }
 
+  &__item:hover &__image {
+    border-color: $accent;
+
+    img {
+      transform: scale(1.02);
+      filter: brightness(1.1) contrast(1.15);
+    }
+  }
+
   &__image {
     background: rgba(255, 189, 89, 0.1);
     border-radius: 0.5rem;
@@ -69,7 +68,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @include transition(border-color 0.3s ease);
+    transition: border-color 0.3s ease;
 
     img {
       width: 100%;
@@ -78,7 +77,7 @@
       border-radius: 0.5rem;
       display: block;
       filter: brightness(1.05) contrast(1.1);
-      @include transition(transform 0.3s ease, filter 0.3s ease);
+      transition: transform 0.3s ease, filter 0.3s ease;
     }
   }
 
@@ -104,7 +103,7 @@
       height: 28px;
       fill: $text;
       opacity: 0.7;
-      @include transition(all 0.3s ease);
+      transition: all 0.3s ease;
 
       &:hover {
         opacity: 1;

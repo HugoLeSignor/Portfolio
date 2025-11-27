@@ -1,5 +1,4 @@
 @use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
 
 .skills {
   padding: 3rem 1rem;
@@ -26,6 +25,7 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    z-index: 101;
 
     &::before,
     &::after {
@@ -33,7 +33,7 @@
       position: absolute;
       width: 100px;
       height: 100%;
-      z-index: 2;
+      z-index: 102;
       pointer-events: none;
     }
 
@@ -57,6 +57,8 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    position: relative;
+    z-index: 101;
   }
 
   &__item {
@@ -65,6 +67,8 @@
     align-items: center;
     gap: 1rem;
     min-width: 120px;
+    position: relative;
+    z-index: 103;
 
     a {
       display: flex;
@@ -73,13 +77,15 @@
       text-decoration: none;
       cursor: pointer;
       pointer-events: auto;
+      position: relative;
+      z-index: 104;
     }
 
     svg {
       width: 64px;
       height: 64px;
       fill: $bg;
-      @include transition(all 0.3s ease);
+      transition: all 0.3s ease;
       cursor: pointer;
 
       &:hover {

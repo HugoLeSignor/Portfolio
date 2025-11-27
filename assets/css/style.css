@@ -60,7 +60,7 @@ h3,
 h4,
 h5,
 h6,
-.en-tete__logo,
+.header__logo,
 a,
 button,
 .btn {
@@ -187,33 +187,33 @@ body {
   .hero p {
     font-size: 1.75rem;
   }
-  .en-tete__navigation {
+  .header__navigation {
     gap: 0.5rem;
   }
-  .en-tete__navigation a {
+  .header__navigation a {
     padding: 0.25rem;
     font-size: 0.95rem;
   }
   .portfolio h2 {
     font-size: 2.5rem;
   }
-  .portfolio__grille {
+  .portfolio__grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
   }
   .portfolio__image {
     height: 250px;
   }
-  .competences__piste {
+  .skills__track {
     gap: 3rem;
   }
   .contact h2 {
     font-size: 2.5rem;
   }
-  .en-tete__logo-burger span:nth-child(2) {
+  .header__logo-burger span:nth-child(2) {
     transition: all 0.3s ease;
   }
-  .en-tete__logo:hover:not(.en-tete__logo--actif) .en-tete__logo-burger span:nth-child(2) {
+  .header__logo:hover:not(.header__logo--active) .header__logo-burger span:nth-child(2) {
     transform: translateX(8px);
   }
 }
@@ -229,28 +229,28 @@ body {
     text-decoration-thickness: 2px;
     border-right-width: 2px;
   }
-  .btn__hero {
+  .hero__buttons {
     flex-direction: column;
     gap: 0.75rem;
     width: 100%;
     max-width: 100%;
     align-items: center;
   }
-  .hero__bouton-cta {
+  .hero__cta-button {
     padding: 0.875rem 1.5rem;
     font-size: 1rem;
     width: 100%;
     max-width: 280px;
     text-align: center;
   }
-  .en-tete {
+  .header {
     padding: 1rem;
     gap: 1rem;
   }
-  .en-tete__bouton-menu {
+  .header__menu-button {
     display: none !important;
   }
-  .en-tete__navigation {
+  .header__navigation {
     position: fixed;
     top: 0;
     right: -100%;
@@ -264,63 +264,63 @@ body {
     z-index: 101;
     gap: 0.5rem;
   }
-  .en-tete__navigation--ouvert {
+  .header__navigation--open {
     right: 0;
   }
-  .en-tete__navigation a {
+  .header__navigation a {
     width: 100%;
     text-align: center;
     padding: 1rem;
     margin-left: 0;
     font-size: 1.1rem;
   }
-  .a-propos,
-  .competences,
+  .about,
+  .skills,
   .portfolio,
   .contact {
     padding: 2rem 1rem;
   }
-  .competences__carte {
+  .skills__card {
     padding: 2rem 1rem;
   }
-  .competences__carte h2 {
+  .skills__card h2 {
     font-size: 2rem;
   }
-  .competences__carrousel {
+  .skills__carousel {
     padding: 1.5rem 0;
   }
-  .competences__carrousel::before, .competences__carrousel::after {
+  .skills__carousel::before, .skills__carousel::after {
     width: 50px;
   }
-  .competences__piste {
+  .skills__track {
     gap: 2.5rem;
   }
-  .competences__element {
+  .skills__item {
     min-width: 100px;
     gap: 0.75rem;
   }
-  .competences__element svg {
+  .skills__item svg {
     width: 56px;
     height: 56px;
   }
-  .competences__element span {
+  .skills__item span {
     font-size: 0.9rem;
   }
   .portfolio h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
   }
-  .portfolio__grille {
+  .portfolio__grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  .portfolio__element {
+  .portfolio__item {
     padding: 1.25rem;
   }
-  .portfolio__element:hover {
+  .portfolio__item:hover {
     transform: translateY(-2px);
   }
-  .portfolio__element h3 {
+  .portfolio__item h3 {
     font-size: 1.3rem;
   }
   .portfolio__description {
@@ -341,12 +341,12 @@ body {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
   }
-  .contact__liens {
+  .contact__links {
     gap: 1.5rem;
     flex-direction: column;
     align-items: center;
   }
-  .contact__lien {
+  .contact__link {
     padding: 0.875rem 1.75rem;
     font-size: 1rem;
     width: 100%;
@@ -359,43 +359,43 @@ body {
   footer p {
     font-size: 0.9rem;
   }
-  .en-tete__logo {
+  .header__logo {
     padding: 0.5rem;
     min-width: 50px;
     min-height: 50px;
     font-size: 0;
   }
-  .en-tete__logo-text {
+  .header__logo-text {
     display: none;
   }
-  .en-tete__logo-burger {
+  .header__logo-burger {
     display: flex;
   }
-  .en-tete__logo-burger span {
+  .header__logo-burger span {
     background: #2C2C2C;
   }
-  .en-tete__logo--actif {
+  .header__logo--active {
     background: #1F2830;
   }
-  .en-tete__logo--actif .en-tete__logo-burger {
+  .header__logo--active .header__logo-burger {
     transform: translate(-50%, -50%);
     gap: 0;
   }
-  .en-tete__logo--actif .en-tete__logo-burger span {
+  .header__logo--active .header__logo-burger span {
     background: #FFBD59;
     position: absolute;
     top: 50%;
     left: 50%;
     margin: 0;
   }
-  .en-tete__logo--actif .en-tete__logo-burger span:nth-child(1) {
+  .header__logo--active .header__logo-burger span:nth-child(1) {
     transform: translate(-50%, -50%) rotate(45deg);
   }
-  .en-tete__logo--actif .en-tete__logo-burger span:nth-child(2) {
+  .header__logo--active .header__logo-burger span:nth-child(2) {
     opacity: 0;
     transform: translate(-50%, -50%);
   }
-  .en-tete__logo--actif .en-tete__logo-burger span:nth-child(3) {
+  .header__logo--active .header__logo-burger span:nth-child(3) {
     transform: translate(-50%, -50%) rotate(-45deg);
   }
 }
@@ -406,55 +406,55 @@ body {
   .hero p {
     font-size: 1.2rem;
   }
-  .btn__hero {
+  .hero__buttons {
     flex-direction: column;
     gap: 0.75rem;
     width: 100%;
   }
-  .hero__bouton-cta {
+  .hero__cta-button {
     padding: 0.75rem 1.25rem;
     font-size: 0.95rem;
     width: 100%;
     max-width: 280px;
   }
-  .en-tete {
+  .header {
     padding: 0.75rem;
     gap: 0.75rem;
   }
-  .en-tete__logo {
+  .header__logo {
     min-width: 45px;
     min-height: 45px;
     padding: 0.4rem;
   }
-  .en-tete__navigation {
+  .header__navigation {
     width: 100%;
     max-width: 320px;
     padding: 4rem 1.5rem 2rem;
   }
-  .competences__carrousel::before, .competences__carrousel::after {
+  .skills__carousel::before, .skills__carousel::after {
     width: 30px;
   }
-  .competences__piste {
+  .skills__track {
     gap: 2rem;
   }
-  .competences__element {
+  .skills__item {
     min-width: 80px;
     gap: 0.5rem;
   }
-  .competences__element svg {
+  .skills__item svg {
     width: 48px;
     height: 48px;
   }
-  .competences__element span {
+  .skills__item span {
     font-size: 0.8rem;
   }
   .portfolio h2 {
     font-size: 1.75rem;
   }
-  .portfolio__element {
+  .portfolio__item {
     padding: 1rem;
   }
-  .portfolio__element h3 {
+  .portfolio__item h3 {
     font-size: 1.2rem;
   }
   .portfolio__image {
@@ -466,14 +466,14 @@ body {
   .contact__info > p {
     font-size: 1rem;
   }
-  .contact__liens {
+  .contact__links {
     gap: 1rem;
   }
-  .contact__lien {
+  .contact__link {
     padding: 0.75rem 1.5rem;
     font-size: 0.95rem;
   }
-  .contact__lien svg {
+  .contact__link svg {
     width: 20px;
     height: 20px;
   }
@@ -482,20 +482,20 @@ body {
   }
 }
 @media (min-width: 769px) {
-  .en-tete__logo:hover {
+  .header__logo:hover {
     transform: translateY(-3px);
     background: #1F2830;
     color: #FFBD59;
   }
 }
-.conteneur {
+.container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-.en-tete__logo {
+.header__logo {
   background: #FFBD59;
   color: #2C2C2C;
   padding: 0.6rem 0.6rem 0.6rem 1.3rem;
@@ -513,11 +513,11 @@ body {
   min-width: 80px;
   min-height: 60px;
 }
-.en-tete__logo-text {
+.header__logo-text {
   transition: all 0.3s ease;
   display: block;
 }
-.en-tete__logo-burger {
+.header__logo-burger {
   display: none;
   flex-direction: column;
   gap: 5px;
@@ -530,7 +530,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.en-tete__logo-burger span {
+.header__logo-burger span {
   width: 25px;
   height: 3px;
   background: #2C2C2C;
@@ -539,54 +539,57 @@ body {
   display: block;
   transform-origin: center;
 }
+.header__logo--active {
+  background: #1F2830;
+}
 
-.en-tete__navigation {
+.header__navigation {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: flex-start;
 }
-.en-tete__navigation--ouvert {
+.header__navigation--open {
   right: 0;
 }
-.en-tete__navigation a {
+.header__navigation a {
   background: #FFBD59;
   color: #2C2C2C;
   text-decoration: none;
   border-radius: 0.2rem;
   transition: all 0.5s ease;
 }
-.en-tete__navigation a:hover {
+.header__navigation a:hover {
   background: #1F2830;
   color: #FFBD59;
 }
-.en-tete__navigation a:focus {
+.header__navigation a:focus {
   outline: 2px solid #FFBD59;
   outline-offset: 2px;
 }
-.en-tete__navigation a {
+.header__navigation a {
   margin-left: 0;
   padding: 0.3rem;
   position: relative;
   z-index: 150;
 }
 
-.contact__lien {
+.contact__link {
   background: #FFBD59;
   color: #2C2C2C;
   text-decoration: none;
   border-radius: 0.2rem;
   transition: all 0.5s ease;
 }
-.contact__lien:hover {
+.contact__link:hover {
   background: #1F2830;
   color: #FFBD59;
 }
-.contact__lien:focus {
+.contact__link:focus {
   outline: 2px solid #FFBD59;
   outline-offset: 2px;
 }
-.contact__lien {
+.contact__link {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -596,12 +599,12 @@ body {
   position: relative;
   z-index: 150;
 }
-.contact__lien svg {
+.contact__link svg {
   width: 24px;
   height: 24px;
 }
 
-.en-tete {
+.header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -614,14 +617,14 @@ body {
   backdrop-filter: none;
   transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
-.en-tete a {
+.header a {
   text-decoration: none;
 }
-.en-tete--defile {
+.header--scrolled {
   background: rgba(47, 61, 75, 0.95);
   backdrop-filter: blur(10px);
 }
-.en-tete__bouton-menu {
+.header__menu-button {
   display: none;
   flex-direction: column;
   gap: 5px;
@@ -631,20 +634,20 @@ body {
   padding: 0.5rem;
   z-index: 150;
 }
-.en-tete__bouton-menu span {
+.header__menu-button span {
   width: 25px;
   height: 3px;
   background: #FFBD59;
   transition: all 0.3s ease;
   border-radius: 2px;
 }
-.en-tete__bouton-menu--actif span:nth-child(1) {
+.header__menu-button--active span:nth-child(1) {
   transform: rotate(45deg) translate(8px, 8px);
 }
-.en-tete__bouton-menu--actif span:nth-child(2) {
+.header__menu-button--active span:nth-child(2) {
   opacity: 0;
 }
-.en-tete__bouton-menu--actif span:nth-child(3) {
+.header__menu-button--active span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
@@ -677,30 +680,29 @@ body {
   border-right: 3px solid #FFBD59;
   animation: typing 2s steps(15, end) forwards, blink-caret 0.75s step-end infinite;
 }
-.hero__bouton-cta {
+.hero__cta-button {
   background: #FFBD59;
   color: #2C2C2C;
   text-decoration: none;
   border-radius: 0.2rem;
   transition: all 0.5s ease;
 }
-.hero__bouton-cta:hover {
+.hero__cta-button:hover {
   background: #1F2830;
   color: #FFBD59;
 }
-.hero__bouton-cta:focus {
+.hero__cta-button:focus {
   outline: 2px solid #FFBD59;
   outline-offset: 2px;
 }
-.hero__bouton-cta {
+.hero__cta-button {
   padding: 1rem 2.5rem;
   font-size: 1.2rem;
   font-weight: 600;
   position: relative;
   z-index: 150;
 }
-
-.btn__hero {
+.hero__buttons {
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -710,43 +712,43 @@ body {
   margin-top: 1rem;
 }
 
-.a-propos {
+.about {
   margin-bottom: 30rem;
 }
-.a-propos__contenu {
+.about__content {
   max-width: 800px;
   margin: 0 auto;
 }
-.a-propos__texte p {
+.about__text p {
   line-height: 1.8;
   font-size: 1.125rem;
 }
-.a-propos__texte p:last-child {
+.about__text p:last-child {
   margin-bottom: 0;
 }
-.a-propos h2 {
+.about h2 {
   text-align: center;
   color: #FFBD59;
   font-size: 3rem;
   margin-bottom: 2rem;
 }
 
-.competences {
+.skills {
   padding: 3rem 1rem;
   margin-bottom: 40rem;
 }
-.competences__carte {
+.skills__card {
   background: #FFBD59;
   border-radius: 1rem;
   padding: 3rem 2rem;
 }
-.competences__carte h2 {
+.skills__card h2 {
   text-align: center;
   color: #2F3D4B;
   font-size: 3rem;
   margin-bottom: 2rem;
 }
-.competences__carrousel {
+.skills__carousel {
   overflow: hidden;
   position: relative;
   padding: 2rem 0;
@@ -755,7 +757,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
 }
-.competences__carrousel::before, .competences__carrousel::after {
+.skills__carousel::before, .skills__carousel::after {
   content: "";
   position: absolute;
   width: 100px;
@@ -763,15 +765,15 @@ body {
   z-index: 2;
   pointer-events: none;
 }
-.competences__carrousel::before {
+.skills__carousel::before {
   left: 0;
   background: linear-gradient(to right, #FFBD59, transparent);
 }
-.competences__carrousel::after {
+.skills__carousel::after {
   right: 0;
   background: linear-gradient(to left, #FFBD59, transparent);
 }
-.competences__piste {
+.skills__track {
   display: flex;
   gap: 4rem;
   width: fit-content;
@@ -781,14 +783,14 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
 }
-.competences__element {
+.skills__item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   min-width: 120px;
 }
-.competences__element a {
+.skills__item a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -796,18 +798,18 @@ body {
   cursor: pointer;
   pointer-events: auto;
 }
-.competences__element svg {
+.skills__item svg {
   width: 64px;
   height: 64px;
   fill: #2F3D4B;
   transition: all 0.3s ease;
   cursor: pointer;
 }
-.competences__element svg:hover {
+.skills__item svg:hover {
   transform: scale(1.15);
   filter: brightness(1.2);
 }
-.competences__element span {
+.skills__item span {
   color: #2F3D4B;
   font-size: 1rem;
   white-space: nowrap;
@@ -823,13 +825,13 @@ body {
   font-size: 3rem;
   margin-bottom: 2rem;
 }
-.portfolio__grille {
+.portfolio__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 1rem;
 }
-.portfolio__element {
+.portfolio__item {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 1rem;
   padding: 1.5rem;
@@ -841,18 +843,18 @@ body {
   position: relative;
   z-index: 150;
 }
-.portfolio__element:hover {
+.portfolio__item:hover {
   transform: translateY(-5px);
   border-color: #FFBD59;
 }
-.portfolio__element:hover .portfolio__image {
+.portfolio__item:hover .portfolio__image {
   border-color: #FFBD59;
 }
-.portfolio__element:hover .portfolio__image img {
+.portfolio__item:hover .portfolio__image img {
   transform: scale(1.02);
   filter: brightness(1.1) contrast(1.15);
 }
-.portfolio__element h3 {
+.portfolio__item h3 {
   color: #FFBD59;
   font-size: 1.5rem;
   margin-top: 1rem;
@@ -884,7 +886,7 @@ body {
   filter: brightness(1.05) contrast(1.1);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
-.portfolio__texte-fallback {
+.portfolio__fallback-text {
   position: absolute;
   color: #FFBD59;
   font-size: 1.2rem;
@@ -923,7 +925,7 @@ body {
   font-size: 3rem;
   margin-bottom: 2rem;
 }
-.contact__contenu {
+.contact__content {
   max-width: 800px;
   margin: 0 auto;
   width: 100%;
@@ -937,7 +939,7 @@ body {
   margin-bottom: 2rem;
   line-height: 1.6;
 }
-.contact__liens {
+.contact__links {
   display: flex;
   justify-content: center;
   gap: 2rem;

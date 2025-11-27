@@ -1,7 +1,7 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
-.en-tete {
+.header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -18,12 +18,12 @@
     text-decoration: none;
   }
 
-  &--defile {
+  &--scrolled {
     background: rgba(47, 61, 75, 0.95);
     backdrop-filter: blur(10px);
   }
 
-  &__bouton-menu {
+  &__menu-button {
     display: none;
     flex-direction: column;
     gap: 5px;
@@ -41,7 +41,7 @@
       border-radius: 2px;
     }
 
-    &--actif {
+    &--active {
       span:nth-child(1) {
         transform: rotate(45deg) translate(8px, 8px);
       }

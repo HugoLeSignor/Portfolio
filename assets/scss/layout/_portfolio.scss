@@ -12,14 +12,14 @@
     margin-bottom: 2rem;
   }
 
-  &__grille {
+  &__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 1rem;
   }
 
-  &__element {
+  &__item {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 1rem;
     padding: 1.5rem;
@@ -82,7 +82,7 @@
     }
   }
 
-  &__texte-fallback {
+  &__fallback-text {
     position: absolute;
     color: $accent;
     font-size: 1.2rem;

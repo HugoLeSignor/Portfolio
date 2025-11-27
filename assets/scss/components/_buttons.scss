@@ -1,8 +1,8 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
-// Boutons de contact
-.contact__lien {
+// Contact buttons
+.contact__link {
   @include button-base;
   display: flex;
   align-items: center;

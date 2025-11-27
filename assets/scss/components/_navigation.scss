@@ -1,13 +1,13 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
-.en-tete__navigation {
+.header__navigation {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: flex-start;
 
-  &--ouvert {
+  &--open {
     right: 0;
   }
 

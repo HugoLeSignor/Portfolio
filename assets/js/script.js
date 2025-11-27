@@ -3,7 +3,7 @@ const allLinks = document.querySelectorAll('a[href^="#"]')
 allLinks.forEach(function (link) {
   link.addEventListener('click', function (event) {
     const screenWidth = window.innerWidth
-    if (screenWidth <= 768 && this.classList.contains('en-tete__logo')) {
+    if (screenWidth <= 768 && this.classList.contains('header__logo')) {
       return
     }
 
@@ -19,7 +19,7 @@ allLinks.forEach(function (link) {
       const isHome = linkHref === '#accueil'
 
       if (isSkills || isPortfolio || isAbout || isHome) {
-        const header = document.querySelector('.en-tete')
+        const header = document.querySelector('.header')
         const headerHeight = header ? header.offsetHeight : 0
 
         const elementTop = targetElement.offsetTop
@@ -41,38 +41,38 @@ allLinks.forEach(function (link) {
       }
 
       const navigation = document.getElementById('navigation-principale')
-      const logoButton = document.querySelector('.en-tete__logo')
-      if (navigation && navigation.classList.contains('en-tete__navigation--ouvert')) {
-        navigation.classList.remove('en-tete__navigation--ouvert')
+      const logoButton = document.querySelector('.header__logo')
+      if (navigation && navigation.classList.contains('header__navigation--open')) {
+        navigation.classList.remove('header__navigation--open')
         if (logoButton) {
-          logoButton.classList.remove('en-tete__logo--actif')
+          logoButton.classList.remove('header__logo--active')
         }
       }
     }
   })
 })
 
-const menuButton = document.querySelector('.en-tete__bouton-menu')
-const logoButton = document.querySelector('.en-tete__logo')
+const menuButton = document.querySelector('.header__menu-button')
+const logoButton = document.querySelector('.header__logo')
 const navigation = document.getElementById('navigation-principale')
 
 function toggleMenu() {
   if (navigation) {
-    const isMenuOpen = navigation.classList.toggle('en-tete__navigation--ouvert')
+    const isMenuOpen = navigation.classList.toggle('header__navigation--open')
 
     if (logoButton) {
       if (isMenuOpen) {
-        logoButton.classList.add('en-tete__logo--actif')
+        logoButton.classList.add('header__logo--active')
       } else {
-        logoButton.classList.remove('en-tete__logo--actif')
+        logoButton.classList.remove('header__logo--active')
       }
     }
 
     if (menuButton) {
       if (isMenuOpen) {
-        menuButton.classList.add('en-tete__bouton-menu--actif')
+        menuButton.classList.add('header__menu-button--active')
       } else {
-        menuButton.classList.remove('en-tete__bouton-menu--actif')
+        menuButton.classList.remove('header__menu-button--active')
       }
     }
   }
@@ -102,19 +102,19 @@ if (navigation) {
     const isClickOnMenuButton = menuButton && menuButton.contains(event.target)
 
     if (!isClickInsideNav && !isClickOnLogo && !isClickOnMenuButton) {
-      navigation.classList.remove('en-tete__navigation--ouvert')
+      navigation.classList.remove('header__navigation--open')
       if (logoButton) {
-        logoButton.classList.remove('en-tete__logo--actif')
+        logoButton.classList.remove('header__logo--active')
       }
       if (menuButton) {
-        menuButton.classList.remove('en-tete__bouton-menu--actif')
+        menuButton.classList.remove('header__menu-button--active')
       }
     }
   })
 }
 
-const skillsTrack = document.querySelector('.competences__piste')
-const skillsCarousel = document.querySelector('.competences__carrousel')
+const skillsTrack = document.querySelector('.skills__track')
+const skillsCarousel = document.querySelector('.skills__carousel')
 
 if (skillsTrack) {
   let position = 0

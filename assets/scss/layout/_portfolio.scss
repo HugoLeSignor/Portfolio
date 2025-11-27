@@ -28,6 +28,8 @@
     text-decoration: none;
     display: block;
     cursor: pointer;
+    position: relative;
+    z-index: 150;
 
     &:hover {
       transform: translateY(-5px);

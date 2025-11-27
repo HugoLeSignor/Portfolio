@@ -114,24 +114,131 @@ if (navigation) {
 }
 
 const skillsTrack = document.querySelector('.competences__piste')
+const skillsCarousel = document.querySelector('.competences__carrousel')
 
 if (skillsTrack) {
   let position = 0
+  let animationId = null
+  let isPaused = false
+  let isDragging = false
+  let startX = 0
+  let currentX = 0
+  let dragStartPosition = 0
 
   const speed = 0.5
 
   function animateCarousel() {
-    position = position - speed
+    if (!isPaused && !isDragging) {
+      position = position - speed
 
-    const trackWidth = skillsTrack.scrollWidth / 2
+      const trackWidth = skillsTrack.scrollWidth / 2
 
-    if (Math.abs(position) >= trackWidth) {
-      position = 0
+      if (Math.abs(position) >= trackWidth) {
+        position = 0
+      }
+
+      skillsTrack.style.transform = 'translateX(' + position + 'px)'
     }
 
-    skillsTrack.style.transform = 'translateX(' + position + 'px)'
-
-    requestAnimationFrame(animateCarousel)
+    animationId = requestAnimationFrame(animateCarousel)
   }
+
+  // Pause au survol du carrousel
+  if (skillsCarousel) {
+    skillsCarousel.addEventListener('mouseenter', function () {
+      isPaused = true
+    })
+
+    skillsCarousel.addEventListener('mouseleave', function () {
+      if (!isDragging) {
+        isPaused = false
+      }
+    })
+
+    // Fonctionnalité de drag
+    let dragThreshold = 5 // Seuil minimum pour considérer un drag
+    let hasDragged = false
+
+    skillsCarousel.addEventListener('mousedown', function (e) {
+      if (isPaused) {
+        isDragging = true
+        hasDragged = false
+        startX = e.clientX
+        dragStartPosition = position
+        skillsCarousel.style.cursor = 'grabbing'
+
+        // Empêcher la sélection de texte
+        e.preventDefault()
+      }
+    })
+
+    document.addEventListener('mousemove', function (e) {
+      if (isDragging && isPaused) {
+        currentX = e.clientX
+        const diffX = currentX - startX
+
+        // Vérifier si le mouvement dépasse le seuil
+        if (Math.abs(diffX) > dragThreshold) {
+          hasDragged = true
+        }
+
+        if (hasDragged) {
+          position = dragStartPosition + diffX
+
+          const trackWidth = skillsTrack.scrollWidth / 2
+
+          // Limiter le déplacement pour éviter de sortir des limites
+          if (position > 0) {
+            position = 0
+          } else if (Math.abs(position) >= trackWidth) {
+            position = -trackWidth
+          }
+
+          skillsTrack.style.transform = 'translateX(' + position + 'px)'
+        }
+      }
+    })
+
+    document.addEventListener('mouseup', function (e) {
+      if (isDragging) {
+        isDragging = false
+        skillsCarousel.style.cursor = 'grab'
+
+        // Empêcher le clic sur les liens si on a dragué
+        if (hasDragged) {
+          e.preventDefault()
+          e.stopPropagation()
+
+          // Réinitialiser après un court délai pour permettre les clics normaux
+          setTimeout(function () {
+            hasDragged = false
+          }, 100)
+        }
+
+        // Réinitialiser la position si nécessaire pour maintenir la boucle
+        const trackWidth = skillsTrack.scrollWidth / 2
+        if (Math.abs(position) >= trackWidth) {
+          position = position % trackWidth
+        }
+      }
+    })
+
+    // Empêcher les liens de se déclencher pendant le drag
+    const links = skillsCarousel.querySelectorAll('a')
+    links.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        if (hasDragged) {
+          e.preventDefault()
+          e.stopPropagation()
+        }
+      })
+    })
+  }
+
+  // Style du curseur au survol
+  if (skillsCarousel) {
+    skillsCarousel.style.cursor = 'grab'
+  }
+
   animateCarousel()
 }

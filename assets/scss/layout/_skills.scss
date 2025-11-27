@@ -22,6 +22,10 @@
     overflow: hidden;
     position: relative;
     padding: 2rem 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 
     &::before,
     &::after {
@@ -30,6 +34,7 @@
       width: 100px;
       height: 100%;
       z-index: 2;
+      pointer-events: none;
     }
 
     &::before {
@@ -48,6 +53,10 @@
     gap: 4rem;
     width: fit-content;
     will-change: transform;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
 
   &__element {
@@ -57,10 +66,26 @@
     gap: 1rem;
     min-width: 120px;
 
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
     svg {
       width: 64px;
       height: 64px;
       fill: $bg;
+      @include transition(all 0.3s ease);
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.15);
+        filter: brightness(1.2);
+      }
     }
 
     span {

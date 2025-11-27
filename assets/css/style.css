@@ -506,6 +506,7 @@ body {
   transition: all 0.5s ease;
   cursor: pointer;
   position: relative;
+  z-index: 150;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -566,6 +567,8 @@ body {
 .en-tete__navigation a {
   margin-left: 0;
   padding: 0.3rem;
+  position: relative;
+  z-index: 150;
 }
 
 .contact__lien {
@@ -590,6 +593,8 @@ body {
   padding: 1rem 2rem;
   font-size: 1.1rem;
   font-weight: 500;
+  position: relative;
+  z-index: 150;
 }
 .contact__lien svg {
   width: 24px;
@@ -624,7 +629,7 @@ body {
   border: none;
   cursor: pointer;
   padding: 0.5rem;
-  z-index: 101;
+  z-index: 150;
 }
 .en-tete__bouton-menu span {
   width: 25px;
@@ -691,6 +696,8 @@ body {
   padding: 1rem 2.5rem;
   font-size: 1.2rem;
   font-weight: 600;
+  position: relative;
+  z-index: 150;
 }
 
 .btn__hero {
@@ -743,6 +750,10 @@ body {
   overflow: hidden;
   position: relative;
   padding: 2rem 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 .competences__carrousel::before, .competences__carrousel::after {
   content: "";
@@ -750,6 +761,7 @@ body {
   width: 100px;
   height: 100%;
   z-index: 2;
+  pointer-events: none;
 }
 .competences__carrousel::before {
   left: 0;
@@ -764,6 +776,10 @@ body {
   gap: 4rem;
   width: fit-content;
   will-change: transform;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 .competences__element {
   display: flex;
@@ -772,10 +788,24 @@ body {
   gap: 1rem;
   min-width: 120px;
 }
+.competences__element a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
 .competences__element svg {
   width: 64px;
   height: 64px;
   fill: #2F3D4B;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.competences__element svg:hover {
+  transform: scale(1.15);
+  filter: brightness(1.2);
 }
 .competences__element span {
   color: #2F3D4B;
@@ -808,6 +838,8 @@ body {
   text-decoration: none;
   display: block;
   cursor: pointer;
+  position: relative;
+  z-index: 150;
 }
 .portfolio__element:hover {
   transform: translateY(-5px);

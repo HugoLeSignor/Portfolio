@@ -4,7 +4,6 @@
 @use 'base/reset';
 @use 'base/fonts';
 @use 'base/base';
-@use 'base/responsive';
 
 @use 'components/container';
 @use 'components/logo';
@@ -18,3 +17,5 @@
 @use 'layout/portfolio';
 @use 'layout/contact';
 @use 'layout/footer';
+
+@use 'base/responsive';

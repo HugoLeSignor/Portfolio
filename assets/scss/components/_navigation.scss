@@ -17,11 +17,6 @@
     position: relative;
     z-index: 150;
 
-    @media (max-width: 1024px) {
-      z-index: auto;
-      position: relative;
-    }
-
     &:hover {
       background: $dark-hover;
       color: $accent;

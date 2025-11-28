@@ -14,10 +14,6 @@
   z-index: 150;
   display: flex;
   align-items: center;
-
-  @media (max-width: 1024px) {
-    z-index: 202;
-  }
   justify-content: center;
   min-width: 80px;
   min-height: 60px;

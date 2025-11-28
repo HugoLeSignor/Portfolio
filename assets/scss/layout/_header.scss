@@ -11,10 +11,6 @@
   z-index: 100;
   background: transparent;
   backdrop-filter: none;
-
-  @media (max-width: 1024px) {
-    z-index: 200;
-  }
   transition: background 0.3s ease, backdrop-filter 0.3s ease;
 
   a {

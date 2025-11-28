@@ -12,6 +12,8 @@
   }
 
   .header {
+    z-index: 200;
+
     &__navigation {
       position: fixed;
       top: 0;
@@ -34,11 +36,13 @@
         padding: 1rem;
         font-size: 1.1rem;
         position: relative;
+        z-index: auto;
       }
     }
   }
 
   .header__logo {
+    z-index: 202;
     padding: 0.5rem;
     min-width: 50px;
     min-height: 50px;
